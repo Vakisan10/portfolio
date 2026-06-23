@@ -45,7 +45,7 @@ export default function Accueil({ navigate }) {
         <h1 style={{
           fontSize: "clamp(64px, 10vw, 130px)", fontWeight: 800, lineHeight: 1,
           color: "#fff", letterSpacing: "-2px", margin: 0,
-        }}>VAKISAN</h1>
+        }}>Vakisan</h1>
         <h1 style={{
           fontSize: "clamp(40px, 7vw, 90px)", fontWeight: 800, lineHeight: 1,
           color: "#fff", letterSpacing: "-2px", margin: 0,
