@@ -10,7 +10,7 @@ const navCards = [
   { id: "parcours",    num: "01", icon: "🎓", titre: "Parcours",    desc: "STI2D → BUT Informatique" },
   { id: "competences", num: "02", icon: "⚡", titre: "Compétences", desc: "6 compétences BUT avec preuves" },
   { id: "sae",         num: "03", icon: "🚀", titre: "SAÉ",          desc: "Application de gestion · BDD · Réseau" },
-  { id: "stage",       num: "04", icon: "💼", titre: "Stage",        desc: "Lys Conseil · Webmaster · 8 sem" },
+  { id: "stage",       num: "04", icon: "💼", titre: "Stage",        desc: "Lys Conseil · 8 sem" },
 ];
 
 export default function Accueil({ navigate }) {

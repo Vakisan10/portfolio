@@ -53,7 +53,7 @@ export default function Stage() {
     <div className="space-y-10">
       <div>
         <h2 className="text-2xl font-semibold mb-1">Stage — Lys Conseil</h2>
-        <p className="text-zinc-400 text-sm">7 juillet – 28 août 2025 · 8 semaines · Webmaster</p>
+        <p className="text-zinc-400 text-sm">8 semaines · Lys Conseil</p>
       </div>
 
       {/* Présentation entreprise */}

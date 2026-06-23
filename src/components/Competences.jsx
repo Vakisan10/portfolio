@@ -15,6 +15,7 @@ const competences = [
     preuves: [
       { label: "SAÉ S4 — GitHub", url: "https://github.com/Vakisan10/SAES401_Jupiter5" },
       { label: "SAÉ S3 — GitHub", url: "https://github.com/At9ph/SAE_Jupiter_D" },
+      { label: "Site vitrine HTML/CSS livré — stage Lys Conseil" },
     ],
     analyse:
       "Avant cette SAÉ, je savais coder des petits programmes seul. Ce projet m'a obligé à penser une architecture — comment les composants communiquent, comment la BDD s'intègre, comment plusieurs personnes peuvent travailler sur le même repo sans tout casser. En stage, créer un site pour un vrai client a ajouté une dimension que les SAÉ ne donnent pas : quelqu'un attend le résultat, et ce résultat va être utilisé.",
@@ -53,7 +54,9 @@ const competences = [
       "SAÉ S203 — manipulation de machines virtuelles et mise en place de la communication réseau hôte/VM",
       "Hébergement de sites web sur Hostinger (stage)",
     ],
-    preuves: [],
+    preuves: [
+      { label: "Hébergement de sites sur Hostinger — stage Lys Conseil" },
+    ],
     analyse:
       "La SAÉ S203 m'a fait passer de la théorie réseau vue en cours à une configuration réelle. Installer Apache2, c'est une chose ; comprendre ce que chaque directive de httpd.conf change concrètement, ou pourquoi une règle .htaccess bloque ou autorise un accès, c'est différent. La partie la plus formatrice a été de faire communiquer la VM avec la machine hôte : ça m'a obligé à comprendre l'adressage et la configuration réseau plutôt que de la subir.",
     niveau: { avant: "Notions théoriques de réseau", apres: "Configuration réelle d'un serveur Apache2 et d'une communication hôte/VM" },
@@ -72,7 +75,10 @@ const competences = [
       "BDD intégrée dans l'application développée en SAÉ S3 & S4",
       "Base de données WordPress via Fluent Form (stage Lys Conseil)",
     ],
-    preuves: [],
+    preuves: [
+      { label: "Rapport SAÉ S104 — Bases de données (PDF)", url: "https://github.com/Vakisan10/portfolio/raw/main/public/Mathignanasingam_Vakisan_sae.pdf" },
+      { label: "BDD WordPress / Fluent Form — stage Lys Conseil" },
+    ],
     analyse:
       "La SAÉ S104 m'a vraiment appris à modéliser avant de coder. Avant, je faisais des tables SQL un peu au hasard. Après, je comprends pourquoi on normalise, pourquoi les clés étrangères existent, et comment la structure de la base impacte les requêtes. La comparaison manuel/AGL était intéressante : le script généré est plus rigoureux (NOT NULL partout, ALTER TABLE séparés) mais moins lisible au premier coup d'œil.",
     niveau: { avant: "SQL basique sans modélisation", apres: "Modélisation EA + implémentation PostgreSQL" },
@@ -111,6 +117,7 @@ const competences = [
     preuves: [
       { label: "SAÉ S3 — GitHub", url: "https://github.com/At9ph/SAE_Jupiter_D" },
       { label: "SAÉ S4 — GitHub", url: "https://github.com/Vakisan10/SAES401_Jupiter5" },
+      { label: "Relation client suivie sur 8 semaines — stage Lys Conseil" },
     ],
     analyse:
       "Git en groupe, c'est quelque chose qui s'apprend en le faisant. Les premiers conflits de merge font peur, après on comprend que c'est juste de la logique. Ce que le stage a ajouté : la collaboration avec une personne qui n'est pas étudiant, qui a ses propres contraintes et qui attend des résultats concrets. J'ai appris à formuler mes questions différemment, à présenter mon travail de façon plus professionnelle.",
@@ -263,15 +270,24 @@ export default function Competences() {
                     <p className="text-xs text-zinc-500 uppercase tracking-wider mb-3">Preuves</p>
                     <div className="flex flex-wrap gap-3">
                       {c.preuves.map((p) => (
-                        <a
-                          key={p.url}
-                          href={p.url}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="flex items-center gap-2 text-sm text-indigo-400 hover:text-indigo-300 border border-zinc-700 hover:border-indigo-700 rounded-lg px-3 py-2 transition-all"
-                        >
-                          <span>↗</span> {p.label}
-                        </a>
+                        p.url ? (
+                          <a
+                            key={p.label}
+                            href={p.url}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="flex items-center gap-2 text-sm text-indigo-400 hover:text-indigo-300 border border-zinc-700 hover:border-indigo-700 rounded-lg px-3 py-2 transition-all"
+                          >
+                            <span>↗</span> {p.label}
+                          </a>
+                        ) : (
+                          <span
+                            key={p.label}
+                            className="flex items-center gap-2 text-sm text-zinc-400 border border-zinc-800 rounded-lg px-3 py-2"
+                          >
+                            {p.label}
+                          </span>
+                        )
                       ))}
                     </div>
                   </div>
