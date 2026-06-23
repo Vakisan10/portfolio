@@ -1,78 +1,116 @@
-export default function Accueil() {
+import { useState, useEffect } from "react";
+
+const phrases = [
+  "Étudiant BUT Informatique · IUT Villetaneuse",
+  "En recherche d'alternance · Développement web & logiciel",
+  "Java · React · SQL · Git · WordPress",
+];
+
+const navCards = [
+  { id: "parcours",    num: "01", icon: "🎓", titre: "Parcours",    desc: "STI2D → BUT Informatique" },
+  { id: "competences", num: "02", icon: "⚡", titre: "Compétences", desc: "6 compétences BUT avec preuves" },
+  { id: "sae",         num: "03", icon: "🚀", titre: "SAÉ",          desc: "Jupiter S3 & S4 · BDD · Gestion" },
+  { id: "stage",       num: "04", icon: "💼", titre: "Stage",        desc: "Lys Conseil · Webmaster · 8 sem" },
+];
+
+export default function Accueil({ navigate }) {
+  const [phraseIdx, setPhraseIdx] = useState(0);
+  const [displayed, setDisplayed] = useState("");
+  const [typing, setTyping] = useState(true);
+
+  useEffect(() => {
+    const target = phrases[phraseIdx];
+    if (typing) {
+      if (displayed.length < target.length) {
+        const t = setTimeout(() => setDisplayed(target.slice(0, displayed.length + 1)), 38);
+        return () => clearTimeout(t);
+      } else {
+        const t = setTimeout(() => setTyping(false), 2000);
+        return () => clearTimeout(t);
+      }
+    } else {
+      if (displayed.length > 0) {
+        const t = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 18);
+        return () => clearTimeout(t);
+      } else {
+        setPhraseIdx((i) => (i + 1) % phrases.length);
+        setTyping(true);
+      }
+    }
+  }, [displayed, typing, phraseIdx]);
+
   return (
-    <div className="space-y-10">
-      {/* Hero */}
-      <div className="space-y-4">
-        <div className="flex items-start gap-5">
-          <div className="w-16 h-16 rounded-full bg-indigo-900 flex items-center justify-center text-xl font-semibold text-indigo-200 shrink-0">
-            VM
-          </div>
-          <div>
-            <h1 className="text-3xl font-semibold tracking-tight">Vakisan Mathignanasingam</h1>
-            <p className="text-indigo-400 mt-1 text-base">Étudiant en 2e année de BUT Informatique — IUT de Villetaneuse, Sorbonne Paris Nord</p>
-            <p className="text-zinc-400 text-sm mt-1">À la recherche d'une alternance en développement logiciel / web</p>
-          </div>
-        </div>
+    <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", padding: "80px 48px 40px" }}>
+      {/* Grand nom */}
+      <div style={{ marginBottom: 32 }}>
+        <h1 style={{
+          fontSize: "clamp(64px, 10vw, 130px)", fontWeight: 800, lineHeight: 1,
+          color: "#fff", letterSpacing: "-2px", margin: 0,
+        }}>Vakisan</h1>
+        <h1 style={{
+          fontSize: "clamp(40px, 7vw, 90px)", fontWeight: 800, lineHeight: 1,
+          color: "rgba(255,255,255,0.13)", letterSpacing: "-2px", margin: 0,
+          WebkitTextStroke: "1px rgba(255,255,255,0.18)",
+        }}>Mathignanasingam</h1>
       </div>
 
-      {/* Texte perso */}
-      <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-6 space-y-3">
-        <h2 className="text-lg font-medium">En quelques mots</h2>
-        <p className="text-zinc-300 leading-relaxed text-sm">
-          J'ai fait un bac STI2D, pas un bac général. Ce n'est pas un détail : ça veut dire que j'ai appris à penser des systèmes avant d'apprendre à les coder. Quand j'ai commencé le BUT info, j'avais déjà le réflexe de décomposer un problème avant de me lancer.
-        </p>
-        <p className="text-zinc-300 leading-relaxed text-sm">
-          Ce qui me caractérise dans mon travail, c'est la rigueur — pas au sens rigidité, mais au sens de finir ce que j'ai commencé, de vérifier ce que je produis, de ne pas livrer quelque chose que je ne comprends pas moi-même. En stage chez Lys Conseil, j'étais seul stagiaire pendant 7 semaines. J'ai appris à prendre des décisions sans filet, et à les assumer.
-        </p>
-        <p className="text-zinc-300 leading-relaxed text-sm">
-          Je vise le développement web et logiciel parce que c'est là où je progresse le plus vite et où j'ai envie d'aller plus loin.
+      {/* Typewriter */}
+      <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 56 }}>
+        <div style={{ width: 3, height: 22, background: "#7c3aed", borderRadius: 2 }} />
+        <p style={{ fontSize: 16, color: "rgba(255,255,255,0.55)", fontWeight: 400, minHeight: 24 }}>
+          {displayed}
+          <span style={{ opacity: Math.random() > 0.5 ? 1 : 0, color: "#7c3aed" }}>|</span>
         </p>
       </div>
 
-      {/* Infos rapides */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-5 space-y-1">
-          <p className="text-xs text-zinc-500 uppercase tracking-wider">Contact</p>
-          <p className="text-zinc-200 text-sm">vakisanmathi10@gmail.com</p>
-        </div>
-        <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-5 space-y-2">
-          <p className="text-xs text-zinc-500 uppercase tracking-wider">Formation</p>
-          <p className="text-zinc-200 text-sm">BUT Informatique — 2e année</p>
-          <p className="text-zinc-400 text-xs">IUT Villetaneuse · Sorbonne Paris Nord</p>
-        </div>
-        <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-5 space-y-2">
-          <p className="text-xs text-zinc-500 uppercase tracking-wider">Expérience récente</p>
-          <p className="text-zinc-200 text-sm">Webmaster — Lys Conseil</p>
-          <p className="text-zinc-400 text-xs">Juil. – Août 2025 · 8 semaines</p>
-        </div>
-        <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-5 space-y-2">
-          <p className="text-xs text-zinc-500 uppercase tracking-wider">Stack principale</p>
-          <div className="flex flex-wrap gap-1.5 mt-1">
-            {["HTML/CSS", "SQL", "Java", "React", "Git", "WordPress"].map((t) => (
-              <span key={t} className="bg-zinc-800 text-zinc-300 text-xs px-2.5 py-1 rounded-full">{t}</span>
-            ))}
-          </div>
-        </div>
+      {/* Cards nav */}
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 12, maxWidth: 620, marginBottom: 56 }}>
+        {navCards.map(c => (
+          <button key={c.id} onClick={() => navigate(c.id)} style={{
+            background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)",
+            borderRadius: 14, padding: "18px 20px", cursor: "pointer", textAlign: "left",
+            transition: "all 0.2s", color: "#fff",
+          }}
+          onMouseEnter={e => { e.currentTarget.style.background = "rgba(255,255,255,0.08)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.18)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
+          onMouseLeave={e => { e.currentTarget.style.background = "rgba(255,255,255,0.04)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; e.currentTarget.style.transform = "translateY(0)"; }}
+          >
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 16 }}>
+              <span style={{ fontSize: 20 }}>{c.icon}</span>
+              <span style={{ fontSize: 11, color: "rgba(255,255,255,0.25)", fontFamily: "monospace" }}>{c.num} ↗</span>
+            </div>
+            <p style={{ fontWeight: 600, fontSize: 15, marginBottom: 4 }}>{c.titre}</p>
+            <p style={{ fontSize: 12, color: "rgba(255,255,255,0.4)" }}>{c.desc}</p>
+          </button>
+        ))}
       </div>
 
-      {/* GitHub rapide */}
-      <div className="flex gap-4 flex-wrap">
-        <a
-          href="https://github.com/Vakisan10/SAES401_Jupiter5"
-          target="_blank"
-          rel="noreferrer"
-          className="flex items-center gap-2 text-sm text-indigo-400 hover:text-indigo-300 border border-zinc-800 rounded-lg px-4 py-2 hover:border-indigo-800 transition-all"
-        >
-          <span>↗</span> SAÉ Jupiter S4 — GitHub
+      {/* Footer bas */}
+      <div style={{
+        position: "fixed", bottom: 0, left: 0, right: 0,
+        display: "flex", alignItems: "center", justifyContent: "space-between",
+        padding: "16px 48px",
+        borderTop: "1px solid rgba(255,255,255,0.06)",
+        background: "rgba(8,8,16,0.7)", backdropFilter: "blur(12px)",
+        zIndex: 10,
+      }}>
+        <a href="mailto:vakisanmathi10@gmail.com" style={{ display: "flex", alignItems: "center", gap: 8, color: "rgba(255,255,255,0.4)", fontSize: 13, textDecoration: "none" }}
+          onMouseEnter={e => e.currentTarget.style.color = "#fff"}
+          onMouseLeave={e => e.currentTarget.style.color = "rgba(255,255,255,0.4)"}>
+          ✉ vakisanmathi10@gmail.com
         </a>
-        <a
-          href="https://github.com/At9ph/SAE_Jupiter_D"
-          target="_blank"
-          rel="noreferrer"
-          className="flex items-center gap-2 text-sm text-indigo-400 hover:text-indigo-300 border border-zinc-800 rounded-lg px-4 py-2 hover:border-indigo-800 transition-all"
-        >
-          <span>↗</span> SAÉ Jupiter S3 — GitHub
+        <a href="https://github.com/Vakisan10" target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: 8, color: "rgba(255,255,255,0.4)", fontSize: 13, textDecoration: "none" }}
+          onMouseEnter={e => e.currentTarget.style.color = "#fff"}
+          onMouseLeave={e => e.currentTarget.style.color = "rgba(255,255,255,0.4)"}>
+          ⌥ github.com/Vakisan10
         </a>
+        <button onClick={() => navigate("projet")} style={{
+          background: "transparent", border: "none", cursor: "pointer",
+          color: "#7c3aed", fontSize: 13, fontWeight: 600, display: "flex", alignItems: "center", gap: 6,
+        }}
+        onMouseEnter={e => e.currentTarget.style.color = "#a78bfa"}
+        onMouseLeave={e => e.currentTarget.style.color = "#7c3aed"}>
+          Projet pro →
+        </button>
       </div>
     </div>
   );
