@@ -1,19 +1,19 @@
 const missions = [
   {
     titre: "Site vitrine HTML/CSS",
-    desc: "Création d'un site professionnel pour une petite entreprise cliente de Lys Conseil. J'ai fait le choix de travailler en HTML/CSS pur plutôt que WordPress — c'était possible parce que Barbara m'a laissé choisir. Avantage : contrôle total sur le design. Inconvénient : plus long. J'ai géré la structure, le design, l'intégration des textes fournis, et les tests responsive sur ordinateur et téléphone.",
+    desc: "Création d'un site professionnel pour une petite entreprise cliente de Lys Conseil. J'ai fait le choix de travailler en HTML/CSS pur plutôt que WordPress, c'était possible parce que Barbara m'a laissé choisir. Avantage : contrôle total sur le design. Inconvénient : plus long. J'ai géré la structure, le design, l'intégration des textes fournis, et les tests responsive sur ordinateur et téléphone.",
     tags: ["HTML", "CSS", "Responsive"],
     competences: ["Réaliser", "Collaborer"],
   },
   {
     titre: "Base de données WordPress",
-    desc: "Conception d'une base de données intégrée à WordPress via l'extension Fluent Form, pour collecter et organiser les données de clients de Lys Conseil. C'est là que j'ai découvert qu'on peut faire de la gestion de données sans SQL directement — et que WordPress peut faire bien plus que des blogs.",
+    desc: "Conception d'une base de données intégrée à WordPress via l'extension Fluent Form, pour collecter et organiser les données de clients de Lys Conseil. C'est là que j'ai découvert qu'on peut faire de la gestion de données sans SQL directement, et que WordPress peut faire bien plus que des blogs.",
     tags: ["WordPress", "Fluent Form", "BDD"],
     competences: ["Gérer", "Réaliser"],
   },
   {
     titre: "Site Wix pour une association",
-    desc: "Création complète d'un site pour une association via Wix, de la maquette à la mise en ligne. Première fois que j'utilisais Wix sérieusement — j'ai trouvé ça limité par rapport au HTML/CSS mais beaucoup plus rapide pour un client qui veut pouvoir modifier lui-même son site.",
+    desc: "Création complète d'un site pour une association via Wix, de la maquette à la mise en ligne. Première fois que j'utilisais Wix sérieusement, j'ai trouvé ça limité par rapport au HTML/CSS mais beaucoup plus rapide pour un client qui veut pouvoir modifier lui-même son site.",
     tags: ["Wix", "Design"],
     competences: ["Réaliser"],
   },
@@ -34,12 +34,12 @@ const apprentissages = [
   {
     titre: "La relation client, c'est autre chose",
     texte:
-      "Voir une cliente venir aux réunions, observer comment Barbara lui parlait, comprendre ses attentes sans qu'elle les formule toujours clairement — c'est une dimension que les SAÉ ne répliquent pas vraiment. J'ai appris à présenter mon travail de façon plus accessible, à reformuler les besoins avant de les coder.",
+      "Voir une cliente venir aux réunions, observer comment Barbara lui parlait, comprendre ses attentes sans qu'elle les formule toujours clairement, c'est une dimension que les SAÉ ne répliquent pas vraiment. J'ai appris à présenter mon travail de façon plus accessible, à reformuler les besoins avant de les coder.",
   },
   {
     titre: "S'autoformer sur le tas",
     texte:
-      "WordPress, je l'avais appris en vidéo YouTube avant même de commencer le stage, parce que je savais que Lys Conseil l'utilisait. Cette habitude d'anticiper et d'apprendre par moi-même avant d'avoir besoin — c'est quelque chose que le stage a renforcé. On n'attend pas qu'on nous enseigne.",
+      "WordPress, je l'avais appris en vidéo YouTube avant même de commencer le stage, parce que je savais que Lys Conseil l'utilisait. Cette habitude d'anticiper et d'apprendre par moi-même avant d'avoir besoin, c'est quelque chose que le stage a renforcé. On n'attend pas qu'on nous enseigne.",
   },
   {
     titre: "La communication informelle est professionnelle",
@@ -52,7 +52,7 @@ export default function Stage() {
   return (
     <div className="space-y-10">
       <div>
-        <h2 className="text-2xl font-semibold mb-1">Stage — Lys Conseil</h2>
+        <h2 className="text-2xl font-semibold mb-1">Stage, Lys Conseil</h2>
         <p className="text-zinc-400 text-sm">8 semaines · Lys Conseil</p>
       </div>
 
@@ -69,7 +69,7 @@ export default function Stage() {
           </div>
         </div>
         <p className="text-sm text-zinc-400 leading-relaxed">
-          Cabinet de conseil qui accompagne des entrepreneurs — création de sites web, communication, réseaux sociaux, formation. Leur particularité : un accompagnement spécifique aux femmes entrepreneures. J'ai découvert une structure à taille humaine où les projets sont très variés et les délais serrés.
+          Cabinet de conseil qui accompagne des entrepreneurs : création de sites web, communication, réseaux sociaux, formation. Leur particularité : un accompagnement spécifique aux femmes entrepreneures. J'ai découvert une structure à taille humaine où les projets sont très variés et les délais serrés.
         </p>
       </div>
 
@@ -113,7 +113,7 @@ export default function Stage() {
       <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-5 space-y-3">
         <h3 className="text-sm font-medium">Conditions de travail</h3>
         <p className="text-sm text-zinc-400 leading-relaxed">
-          Espace de coworking à Deuil-la-Barre, avec 2 jours de télétravail par semaine. Le télétravail m'a forcé à être plus rigoureux dans ma gestion du temps — quand personne ne vous voit travailler, il faut le montrer autrement, par des livrables. J'ai utilisé mon ordinateur personnel pour tout : code, tests, communication.
+          Espace de coworking à Deuil-la-Barre, avec 2 jours de télétravail par semaine. Le télétravail m'a forcé à être plus rigoureux dans ma gestion du temps : quand personne ne vous voit travailler, il faut le montrer autrement, par des livrables. J'ai utilisé mon ordinateur personnel pour tout : code, tests, communication.
         </p>
       </div>
     </div>

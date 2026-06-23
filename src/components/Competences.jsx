@@ -8,17 +8,17 @@ const competences = [
     desc: "Développer des applications qui répondent à un besoin",
     couleur: "indigo",
     experiences: [
-      "SAÉ S3 & S4 — application Java/Spring en groupe de 5",
-      "Stage Lys Conseil — site vitrine HTML/CSS livré à un client réel",
+      "SAÉ S3 & S4, application Java/Spring en groupe de 5",
+      "Stage Lys Conseil, site vitrine HTML/CSS livré à un client réel",
       "Contribution à une page React Native en stage",
     ],
     preuves: [
-      { label: "SAÉ S4 — GitHub", url: "https://github.com/Vakisan10/SAES401_Jupiter5" },
-      { label: "SAÉ S3 — GitHub", url: "https://github.com/At9ph/SAE_Jupiter_D" },
-      { label: "Site vitrine HTML/CSS livré — stage Lys Conseil" },
+      { label: "SAÉ S4 (GitHub)", url: "https://github.com/Vakisan10/SAES401_Jupiter5" },
+      { label: "SAÉ S3 (GitHub)", url: "https://github.com/At9ph/SAE_Jupiter_D" },
+      { label: "Site vitrine HTML/CSS livré, stage Lys Conseil" },
     ],
     analyse:
-      "Avant cette SAÉ, je savais coder des petits programmes seul. Ce projet m'a obligé à penser une architecture — comment les composants communiquent, comment la BDD s'intègre, comment plusieurs personnes peuvent travailler sur le même repo sans tout casser. En stage, créer un site pour un vrai client a ajouté une dimension que les SAÉ ne donnent pas : quelqu'un attend le résultat, et ce résultat va être utilisé.",
+      "Avant cette SAÉ, je savais coder des petits programmes seul. Ce projet m'a obligé à penser une architecture : comment les composants communiquent, comment la BDD s'intègre, comment plusieurs personnes peuvent travailler sur le même repo sans tout casser. En stage, créer un site pour un vrai client a ajouté une dimension que les SAÉ ne donnent pas : quelqu'un attend le résultat, et ce résultat va être utilisé.",
     niveau: { avant: "Débutant", apres: "Intermédiaire confirmé" },
     ameliorer: "Aller plus loin sur les tests automatisés et l'architecture front-end moderne (Next.js, TypeScript).",
     tags: ["Java", "Spring", "HTML", "CSS", "React Native"],
@@ -30,12 +30,12 @@ const competences = [
     desc: "Améliorer les performances ou la qualité d'une application",
     couleur: "violet",
     experiences: [
-      "SAÉ S4 — reprise et amélioration complète du projet S3",
-      "Site vitrine en stage — tests responsive sur mobile et desktop",
-      "SAÉ S104 — comparaison script SQL manuel vs généré par AGL",
+      "SAÉ S4, reprise et amélioration complète du projet S3",
+      "Site vitrine en stage, tests responsive sur mobile et desktop",
+      "SAÉ S104, comparaison script SQL manuel vs généré par AGL",
     ],
     preuves: [
-      { label: "SAÉ S4 — GitHub", url: "https://github.com/Vakisan10/SAES401_Jupiter5" },
+      { label: "SAÉ S4 (GitHub)", url: "https://github.com/Vakisan10/SAES401_Jupiter5" },
     ],
     analyse:
       "L'itération entre S3 et S4, c'est l'exemple le plus concret que j'ai d'optimisation. On a regardé ce qui ne fonctionnait pas bien, ce qui était mal structuré, et on a reconstruit certaines parties. Ce n'est pas très spectaculaire à montrer mais c'est l'exercice le plus formateur : relire son propre code avec un regard critique après plusieurs mois.",
@@ -50,12 +50,12 @@ const competences = [
     desc: "Administration Linux, réseau, virtualisation, déploiement",
     couleur: "emerald",
     experiences: [
-      "SAÉ S203 — installation et configuration d'un serveur web Apache2 (httpd.conf, .htaccess)",
-      "SAÉ S203 — manipulation de machines virtuelles et mise en place de la communication réseau hôte/VM",
+      "SAÉ S203, installation et configuration d'un serveur web Apache2 (httpd.conf, .htaccess)",
+      "SAÉ S203, manipulation de machines virtuelles et mise en place de la communication réseau hôte/VM",
       "Hébergement de sites web sur Hostinger (stage)",
     ],
     preuves: [
-      { label: "Hébergement de sites sur Hostinger — stage Lys Conseil" },
+      { label: "Hébergement de sites sur Hostinger, stage Lys Conseil" },
     ],
     analyse:
       "La SAÉ S203 m'a fait passer de la théorie réseau vue en cours à une configuration réelle. Installer Apache2, c'est une chose ; comprendre ce que chaque directive de httpd.conf change concrètement, ou pourquoi une règle .htaccess bloque ou autorise un accès, c'est différent. La partie la plus formatrice a été de faire communiquer la VM avec la machine hôte : ça m'a obligé à comprendre l'adressage et la configuration réseau plutôt que de la subir.",
@@ -70,14 +70,14 @@ const competences = [
     desc: "Concevoir et exploiter des bases de données",
     couleur: "amber",
     experiences: [
-      "SAÉ S104 — modèle EA, schéma relationnel, scripts SQL, peuplement depuis CSV",
+      "SAÉ S104, modèle EA, schéma relationnel, scripts SQL, peuplement depuis CSV",
       "Comparaison script manuel vs généré par AGL (logigramme, clés primaires/étrangères)",
       "BDD intégrée dans l'application développée en SAÉ S3 & S4",
       "Base de données WordPress via Fluent Form (stage Lys Conseil)",
     ],
     preuves: [
-      { label: "Rapport SAÉ S104 — Bases de données (PDF)", url: "https://github.com/Vakisan10/portfolio/raw/main/public/Mathignanasingam_Vakisan_sae.pdf" },
-      { label: "BDD WordPress / Fluent Form — stage Lys Conseil" },
+      { label: "Rapport SAÉ S104 (PDF)", url: "https://github.com/Vakisan10/portfolio/raw/main/public/Mathignanasingam_Vakisan_sae.pdf" },
+      { label: "BDD WordPress / Fluent Form, stage Lys Conseil" },
     ],
     analyse:
       "La SAÉ S104 m'a vraiment appris à modéliser avant de coder. Avant, je faisais des tables SQL un peu au hasard. Après, je comprends pourquoi on normalise, pourquoi les clés étrangères existent, et comment la structure de la base impacte les requêtes. La comparaison manuel/AGL était intéressante : le script généré est plus rigoureux (NOT NULL partout, ALTER TABLE séparés) mais moins lisible au premier coup d'œil.",
@@ -92,11 +92,11 @@ const competences = [
     desc: "Piloter un projet informatique",
     couleur: "rose",
     experiences: [
-      "SAÉ 2.05 — Gantt, WBS, objectifs SMART, analyse des risques (binôme) — rapport complet",
-      "SAÉ S3 & S4 — coordination d'une équipe de 5 sur plusieurs semaines",
-      "Stage — gestion en autonomie avec points réguliers maître de stage",
+      "SAÉ 2.05, Gantt, WBS, objectifs SMART, analyse des risques (binôme), rapport complet",
+      "SAÉ S3 & S4, coordination d'une équipe de 5 sur plusieurs semaines",
+      "Stage, gestion en autonomie avec points réguliers maître de stage",
     ],
-    preuves: [{ label: "Rapport SAÉ 2.05 — Gestion de projet (PDF)", url: "https://github.com/Vakisan10/portfolio/raw/main/public/Gestion_de_projet_compte_rendue__2_.pdf" }],
+    preuves: [{ label: "Rapport SAÉ 2.05 (PDF)", url: "https://github.com/Vakisan10/portfolio/raw/main/public/Gestion_de_projet_compte_rendue__2_.pdf" }],
     analyse:
       "La SAÉ 2.05 m'a donné les outils formels (Gantt, WBS, SMART). La SAÉ S3 & S4 m'a appris que la gestion de projet en vrai c'est surtout gérer les humains : qui fait quoi, quand, et comment on rattrape quand quelqu'un est bloqué. En stage, c'était différent encore : gérer ses propres priorités sans équipe, juste avec des deadlines et une cliente qui attend.",
     niveau: { avant: "Aucune méthode formelle", apres: "Maîtrise des outils de base, expérience en groupe réel" },
@@ -110,14 +110,14 @@ const competences = [
     desc: "Travailler dans un contexte professionnel",
     couleur: "cyan",
     experiences: [
-      "SAÉ S3 & S4 — Git collaboratif en groupe de 5 (branches, merges, conflits)",
-      "Stage — relation client réelle, communication par WhatsApp, validation progressive",
+      "SAÉ S3 & S4, Git collaboratif en groupe de 5 (branches, merges, conflits)",
+      "Stage, relation client réelle, communication par WhatsApp, validation progressive",
       "Collaboration avec une étudiante de 3e année sur React Native",
     ],
     preuves: [
-      { label: "SAÉ S3 — GitHub", url: "https://github.com/At9ph/SAE_Jupiter_D" },
-      { label: "SAÉ S4 — GitHub", url: "https://github.com/Vakisan10/SAES401_Jupiter5" },
-      { label: "Relation client suivie sur 8 semaines — stage Lys Conseil" },
+      { label: "SAÉ S3 (GitHub)", url: "https://github.com/At9ph/SAE_Jupiter_D" },
+      { label: "SAÉ S4 (GitHub)", url: "https://github.com/Vakisan10/SAES401_Jupiter5" },
+      { label: "Relation client suivie sur 8 semaines, stage Lys Conseil" },
     ],
     analyse:
       "Git en groupe, c'est quelque chose qui s'apprend en le faisant. Les premiers conflits de merge font peur, après on comprend que c'est juste de la logique. Ce que le stage a ajouté : la collaboration avec une personne qui n'est pas étudiant, qui a ses propres contraintes et qui attend des résultats concrets. J'ai appris à formuler mes questions différemment, à présenter mon travail de façon plus professionnelle.",
@@ -175,7 +175,7 @@ export default function Competences() {
     <div className="space-y-8">
       <div>
         <h2 className="text-2xl font-semibold mb-1">Compétences</h2>
-        <p className="text-zinc-400 text-sm">Les 6 compétences du BUT Informatique — preuves, analyse et auto-évaluation</p>
+        <p className="text-zinc-400 text-sm">Les 6 compétences du BUT Informatique : preuves, analyse et auto-évaluation</p>
       </div>
 
       {/* Recherche */}
@@ -218,7 +218,7 @@ export default function Competences() {
             onClick={() => setFiltre(c.id)}
             className={`px-3 py-1.5 rounded-full text-xs border transition-all ${filtre === c.id ? `${couleurs[c.couleur]} border` : "text-zinc-400 border-zinc-700 hover:border-zinc-500"}`}
           >
-            {c.num} — {c.titre}
+            {c.num} · {c.titre}
           </button>
         ))}
       </div>

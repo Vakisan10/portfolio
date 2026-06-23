@@ -1,7 +1,7 @@
 const etapes = [
   {
     periode: "2024 – aujourd'hui",
-    titre: "BUT Informatique — IUT de Villetaneuse",
+    titre: "BUT Informatique, IUT de Villetaneuse",
     sous: "Sorbonne Paris Nord · 2e année",
     texte:
       "Formation en 3 ans couvrant le développement, les bases de données, les réseaux et la gestion de projet. Ce qui m'a marqué entre le BUT 1 et le BUT 2 : la montée en complexité des projets. En S1 je faisais des scripts seul. En S3 je coordonnais une équipe de 5 sur une application Java avec BDD. Ce n'est pas la même chose.",
@@ -12,7 +12,7 @@ const etapes = [
     titre: "Bac STI2D",
     sous: "Sciences et Technologies de l'Industrie et du Développement Durable",
     texte:
-      "Bac technologique, pas général. La différence c'est qu'on apprend à concevoir des systèmes — électronique, mécanique, numérique — avant de les construire. Ce rapport entre la théorie et le concret, je le retrouve dans ma façon d'aborder le code : je comprends d'abord avant de coder.",
+      "Bac technologique, pas général. La différence, c'est qu'on apprend à concevoir des systèmes (électronique, mécanique, numérique) avant de les construire. Ce rapport entre la théorie et le concret, je le retrouve dans ma façon d'aborder le code : je comprends d'abord avant de coder.",
     couleur: "zinc",
   },
 ];
@@ -90,10 +90,10 @@ export default function Parcours() {
       <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-6 space-y-3">
         <h2 className="text-base font-medium">Pourquoi l'informatique ?</h2>
         <p className="text-sm text-zinc-400 leading-relaxed">
-          Pas par passion du code en tant que tel — ce mot ne veut pas dire grand chose. Plutôt parce que l'informatique est le seul endroit où je peux construire quelque chose d'utile avec très peu de moyens. En STI2D on réfléchissait à des systèmes sur papier, on dessinait des schémas. En info, on les fait vraiment tourner. C'est ce passage du plan à l'exécution qui me motive.
+          Pas par passion du code en tant que tel, ce mot ne veut pas dire grand chose. Plutôt parce que l'informatique est le seul endroit où je peux construire quelque chose d'utile avec très peu de moyens. En STI2D on réfléchissait à des systèmes sur papier, on dessinait des schémas. En info, on les fait vraiment tourner. C'est ce passage du plan à l'exécution qui me motive.
         </p>
         <p className="text-sm text-zinc-400 leading-relaxed">
-          Ce que le BUT m'a confirmé : je ne suis pas là par défaut. Chaque SAÉ a renforcé ce choix, même les plus difficiles — surtout les plus difficiles.
+          Ce que le BUT m'a confirmé : je ne suis pas là par défaut. Chaque SAÉ a renforcé ce choix, même les plus difficiles, surtout les plus difficiles.
         </p>
       </div>
     </div>

@@ -4,12 +4,12 @@ const saes = [
   {
     id: "jupiter",
     label: "S3 & S4 · Projet phare",
-    titre: "SAÉ — Application de gestion",
+    titre: "SAÉ, application de gestion",
     contexte: "Groupe de 5 · Semestres 3 et 4",
     objectif:
-      "Concevoir et développer une application complète de gestion en Java/Spring Boot avec base de données intégrée, sur deux semestres — d'abord une première version en S3, puis une version améliorée en S4.",
+      "Concevoir et développer une application complète de gestion en Java/Spring Boot avec base de données intégrée, sur deux semestres : d'abord une première version en S3, puis une version améliorée en S4.",
     organisation:
-      "Équipe de 5 étudiants. J'ai coordonné l'équipe en S4 tout en contribuant au développement back-end. On utilisait Git avec des branches par fonctionnalité — ce qui a évité pas mal de conflits.",
+      "Équipe de 5 étudiants. J'ai coordonné l'équipe en S4 tout en contribuant au développement back-end. On utilisait Git avec des branches par fonctionnalité, ce qui a évité pas mal de conflits.",
     role: "Coordination de l'équipe, développement back-end, gestion du dépôt Git.",
     difficultes: [
       {
@@ -41,7 +41,7 @@ const saes = [
   {
     id: "bdd",
     label: "S1 · BUT 1",
-    titre: "SAÉ S104 — Bases de données et langage SQL",
+    titre: "SAÉ S104, Bases de données et langage SQL",
     contexte: "Individuel · Semestre 1 · PostgreSQL",
     objectif:
       "Concevoir de A à Z une base de données sur les libertés politiques dans le monde. Trois parties : script SQL manuel avec modèle entités-associations et schéma relationnel, modélisation via AGL (logigramme comparatif), et peuplement des tables depuis un fichier CSV.",
@@ -55,7 +55,7 @@ const saes = [
       },
       {
         pb: "Peuplement depuis un CSV avec plusieurs tables interdépendantes",
-        sol: "Création d'une table temporaire contenant toutes les colonnes du CSV, puis INSERT sélectifs avec NOT EXISTS pour chaque table cible — ce qui évite les doublons et respecte les contraintes de clés étrangères.",
+        sol: "Création d'une table temporaire contenant toutes les colonnes du CSV, puis INSERT sélectifs avec NOT EXISTS pour chaque table cible, ce qui évite les doublons et respecte les contraintes de clés étrangères.",
       },
       {
         pb: "Choisir entre association fonctionnelle et maillée pour l'illustration AGL",
@@ -69,13 +69,13 @@ const saes = [
     perspectives:
       "Aller plus loin sur les requêtes complexes (jointures multiples, agrégats). Découvrir les procédures stockées et les index pour l'optimisation.",
     preuves: [
-      { label: "Rapport SAÉ S104 — Bases de données (PDF)", url: "https://github.com/Vakisan10/portfolio/raw/main/public/Mathignanasingam_Vakisan_sae.pdf" },
+      { label: "Rapport SAÉ S104 (PDF)", url: "https://github.com/Vakisan10/portfolio/raw/main/public/Mathignanasingam_Vakisan_sae.pdf" },
     ],
   },
   {
     id: "calculatrice",
     label: "S2 · BUT 1",
-    titre: "SAÉ Calculatrice — Programmation Orientée Objet Java",
+    titre: "SAÉ Calculatrice, Programmation Orientée Objet Java",
     contexte: "Individuel · Semestre 2 · Java",
     objectif:
       "Concevoir une calculatrice en Java en utilisant les principes de la POO : hiérarchie de classes, héritage, polymorphisme. Résultat : une calculatrice capable d'évaluer des expressions arithmétiques complexes imbriquées, représentées sous forme d'arbre d'expressions.",
@@ -85,11 +85,11 @@ const saes = [
     difficultes: [
       {
         pb: "Comprendre le polymorphisme appliqué à un arbre d'expressions",
-        sol: "La méthode valeur() est abstraite dans Expression. Chaque classe concrète l'implémente différemment. Java appelle automatiquement la bonne version selon le type réel de l'objet — c'est ça le polymorphisme.",
+        sol: "La méthode valeur() est abstraite dans Expression. Chaque classe concrète l'implémente différemment. Java appelle automatiquement la bonne version selon le type réel de l'objet : c'est ça le polymorphisme.",
       },
       {
         pb: "Représenter ((17 - 2) / (2 + 3)) comme un objet",
-        sol: "Chaque opération prend deux Expression en paramètre — qui peuvent elles-mêmes être des opérations. On construit un arbre, l'évaluation se fait récursivement.",
+        sol: "Chaque opération prend deux Expression en paramètre, qui peuvent elles-mêmes être des opérations. On construit un arbre, l'évaluation se fait récursivement.",
       },
     ],
     code: `abstract class Expression {
@@ -124,7 +124,7 @@ Expression d = new Division(
 System.out.println(d + " = " + d.valeur()); // 3.0`,
     competences: [
       { label: "Réaliser", avant: "Code procédural, pas de conception objet", apres: "Architecture OOP : héritage + polymorphisme + encapsulation" },
-      { label: "Optimiser", avant: "Duplication de logique par type d'opération", apres: "Chaque classe encapsule sa logique — code extensible sans modifier l'existant" },
+      { label: "Optimiser", avant: "Duplication de logique par type d'opération", apres: "Chaque classe encapsule sa logique, code extensible sans modifier l'existant" },
     ],
     perspectives:
       "Ajouter la gestion d'erreurs (division par zéro). Implémenter un parser pour lire des expressions depuis une chaîne texte. Ajouter des fonctions mathématiques (puissance, racine carrée).",
@@ -133,7 +133,7 @@ System.out.println(d + " = " + d.valeur()); // 3.0`,
   {
     id: "gestion",
     label: "S2 · BUT 1",
-    titre: "SAÉ 2.05 — Gestion de projet",
+    titre: "SAÉ 2.05, Gestion de projet",
     contexte: "Binôme · Semestre 2",
     objectif:
       "Appliquer les méthodes de gestion de projet sur un cas fictif : réaménager une chambre pour la louer. Définir les enjeux, contraintes, WBS, Gantt, objectifs SMART, analyse des risques.",
@@ -147,7 +147,7 @@ System.out.println(d + " = " + d.valeur()); // 3.0`,
       },
       {
         pb: "Trouver des objectifs SMART cohérents avec le cas",
-        sol: "Repartir du besoin client plutôt que d'inventer des objectifs abstraits — ce qui a rendu le SMART plus ancré",
+        sol: "Repartir du besoin client plutôt que d'inventer des objectifs abstraits, ce qui a rendu le SMART plus ancré",
       },
     ],
     competences: [
@@ -161,7 +161,7 @@ System.out.println(d + " = " + d.valeur()); // 3.0`,
   {
     id: "reseau",
     label: "S2 · BUT 1",
-    titre: "SAÉ S203 — Installation de services réseau",
+    titre: "SAÉ S203, Installation de services réseau",
     contexte: "Semestre 2 · Apache2 · Virtualisation",
     objectif:
       "Installer et configurer un serveur web Apache2, puis mettre en place la communication réseau entre une machine virtuelle et la machine hôte.",
@@ -199,7 +199,7 @@ export default function SAE() {
     <div className="space-y-8 animate-fade-in">
       <div>
         <h2 className="text-2xl font-semibold mb-1 tracking-tight">SAÉ</h2>
-        <p className="text-zinc-500 text-sm">Situations d'apprentissage et d'évaluation — analyse réflexive de chaque projet</p>
+        <p className="text-zinc-500 text-sm">Situations d'apprentissage et d'évaluation, analyse réflexive de chaque projet</p>
       </div>
 
       <div className="space-y-3">
@@ -259,7 +259,7 @@ export default function SAE() {
                 {/* Bloc code si présent */}
                 {s.code && (
                   <div>
-                    <p className="text-xs text-zinc-500 uppercase tracking-wider mb-3">Extrait de code — architecture principale</p>
+                    <p className="text-xs text-zinc-500 uppercase tracking-wider mb-3">Extrait de code, architecture principale</p>
                     <pre className="bg-zinc-950 border border-zinc-800 rounded-lg p-4 overflow-x-auto text-xs text-zinc-300 font-mono leading-relaxed">
                       {s.code}
                     </pre>

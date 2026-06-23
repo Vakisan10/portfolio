@@ -7,10 +7,10 @@ const phrases = [
 ];
 
 const navCards = [
-  { id: "parcours",    num: "01", icon: "🎓", titre: "Parcours",    desc: "STI2D → BUT Informatique" },
-  { id: "competences", num: "02", icon: "⚡", titre: "Compétences", desc: "6 compétences BUT avec preuves" },
-  { id: "sae",         num: "03", icon: "🚀", titre: "SAÉ",          desc: "Application de gestion · BDD · Réseau" },
-  { id: "stage",       num: "04", icon: "💼", titre: "Stage",        desc: "Lys Conseil · 8 sem" },
+  { id: "parcours",    num: "01", titre: "Parcours",    desc: "STI2D → BUT Informatique" },
+  { id: "competences", num: "02", titre: "Compétences", desc: "6 compétences BUT avec preuves" },
+  { id: "sae",         num: "03", titre: "SAÉ",          desc: "Application de gestion · BDD · Réseau" },
+  { id: "stage",       num: "04", titre: "Stage",        desc: "Lys Conseil · 8 sem" },
 ];
 
 export default function Accueil({ navigate }) {
@@ -71,8 +71,7 @@ export default function Accueil({ navigate }) {
           onMouseEnter={e => { e.currentTarget.style.background = "rgba(255,255,255,0.08)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.18)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
           onMouseLeave={e => { e.currentTarget.style.background = "rgba(255,255,255,0.04)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; e.currentTarget.style.transform = "translateY(0)"; }}
           >
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 16 }}>
-              <span style={{ fontSize: 20 }}>{c.icon}</span>
+            <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 16 }}>
               <span style={{ fontSize: 11, color: "rgba(255,255,255,0.25)", fontFamily: "monospace" }}>{c.num} ↗</span>
             </div>
             <p style={{ fontWeight: 600, fontSize: 15, marginBottom: 4 }}>{c.titre}</p>
@@ -92,12 +91,12 @@ export default function Accueil({ navigate }) {
         <a href="mailto:vakisanmathi10@gmail.com" style={{ display: "flex", alignItems: "center", gap: 8, color: "rgba(255,255,255,0.4)", fontSize: 13, textDecoration: "none" }}
           onMouseEnter={e => e.currentTarget.style.color = "#fff"}
           onMouseLeave={e => e.currentTarget.style.color = "rgba(255,255,255,0.4)"}>
-          ✉ vakisanmathi10@gmail.com
+          vakisanmathi10@gmail.com
         </a>
         <a href="https://github.com/Vakisan10" target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: 8, color: "rgba(255,255,255,0.4)", fontSize: 13, textDecoration: "none" }}
           onMouseEnter={e => e.currentTarget.style.color = "#fff"}
           onMouseLeave={e => e.currentTarget.style.color = "rgba(255,255,255,0.4)"}>
-          ⌥ github.com/Vakisan10
+          github.com/Vakisan10
         </a>
         <button onClick={() => navigate("projet")} style={{
           background: "transparent", border: "none", cursor: "pointer",
