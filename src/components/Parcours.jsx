@@ -48,7 +48,6 @@ export default function Parcours() {
         <p className="text-zinc-400 text-sm">Formation et diplômes</p>
       </div>
 
-      {/* Timeline */}
       <div className="space-y-6">
         {etapes.map((e, i) => (
           <div key={i} className="flex gap-5">
@@ -66,7 +65,6 @@ export default function Parcours() {
         ))}
       </div>
 
-      {/* BUT 1 vs BUT 2 */}
       <div>
         <h2 className="text-xl font-semibold mb-4">Évolution BUT 1 → BUT 2</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -89,7 +87,6 @@ export default function Parcours() {
         </div>
       </div>
 
-      {/* Pourquoi l'info */}
       <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-6 space-y-3">
         <h2 className="text-base font-medium">Pourquoi l'informatique ?</h2>
         <p className="text-sm text-zinc-400 leading-relaxed">

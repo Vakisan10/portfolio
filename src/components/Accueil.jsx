@@ -41,7 +41,6 @@ export default function Accueil({ navigate }) {
 
   return (
     <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", padding: "80px 48px 40px" }}>
-      {/* Grand nom */}
       <div style={{ marginBottom: 32 }}>
         <h1 style={{
           fontSize: "clamp(64px, 10vw, 130px)", fontWeight: 800, lineHeight: 1,
@@ -54,7 +53,6 @@ export default function Accueil({ navigate }) {
         }}>Mathignanasingam</h1>
       </div>
 
-      {/* Typewriter */}
       <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 56 }}>
         <div style={{ width: 3, height: 22, background: "#7c3aed", borderRadius: 2 }} />
         <p style={{ fontSize: 16, color: "rgba(255,255,255,0.55)", fontWeight: 400, minHeight: 24 }}>
@@ -63,7 +61,6 @@ export default function Accueil({ navigate }) {
         </p>
       </div>
 
-      {/* Cards nav */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 12, maxWidth: 620, marginBottom: 56 }}>
         {navCards.map(c => (
           <button key={c.id} onClick={() => navigate(c.id)} style={{
@@ -84,7 +81,6 @@ export default function Accueil({ navigate }) {
         ))}
       </div>
 
-      {/* Footer bas */}
       <div style={{
         position: "fixed", bottom: 0, left: 0, right: 0,
         display: "flex", alignItems: "center", justifyContent: "space-between",

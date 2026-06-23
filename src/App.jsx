@@ -88,7 +88,6 @@ export default function App() {
         background: "rgba(8,8,16,0.85)", backdropFilter: "blur(16px)",
         borderBottom: "1px solid rgba(255,255,255,0.06)"
       }}>
-        {/* Logo */}
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
           <div style={{
             width: 36, height: 36, borderRadius: 10, background: "linear-gradient(135deg,#7c3aed,#4f46e5)",
@@ -98,7 +97,6 @@ export default function App() {
           <span style={{ fontSize: 14, color: "rgba(255,255,255,0.5)", fontWeight: 500 }}>Vakisan M.</span>
         </div>
 
-        {/* Tabs centre */}
         <div style={{ display: "flex", gap: 4 }}>
           {tabs.map(t => (
             <button key={t.id} onClick={() => navigate(t.id)} style={{
@@ -113,7 +111,6 @@ export default function App() {
           ))}
         </div>
 
-        {/* Badge dispo */}
         <div style={{
           display: "flex", alignItems: "center", gap: 7,
           border: "1px solid rgba(74,222,128,0.4)", borderRadius: 999,
@@ -124,7 +121,6 @@ export default function App() {
         </div>
       </nav>
 
-      {/* CONTENT */}
       <div style={{
         position: "relative", zIndex: 1, paddingTop: active === "accueil" ? 0 : 80,
         transition: "opacity 0.22s ease, transform 0.22s ease",
