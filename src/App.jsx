@@ -117,7 +117,7 @@ export default function App() {
           padding: "6px 14px", fontSize: 12, color: "#4ade80", fontWeight: 500
         }}>
           <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#4ade80", display: "inline-block", animation: "pulse 2s infinite" }} />
-          Dispo · alternance
+          Dispo · stage
         </div>
       </nav>
 
