@@ -1,6 +1,6 @@
 const competencesADev = [
-  { label: "Déploiement & DevOps", niveau: 20, desc: "Docker, CI/CD, VPS — à construire en BUT 3" },
-  { label: "Tests logiciels", niveau: 25, desc: "Unitaires, intégration — on n'en faisait pas en SAÉ" },
+  { label: "Développement mobile", niveau: 25, desc: "React Native — découvert en stage, à approfondir" },
+  { label: "Développement web moderne", niveau: 55, desc: "React, écosystèmes front-end actuels — à pousser plus loin" },
   { label: "Architecture back-end", niveau: 45, desc: "API REST, microservices — base posée avec Spring" },
   { label: "Développement web", niveau: 65, desc: "HTML/CSS + React — confirmé en stage et SAÉ" },
   { label: "Bases de données SQL", niveau: 72, desc: "PostgreSQL, modélisation — maîtrisé depuis S104" },
@@ -11,7 +11,7 @@ const objectifs = [
     periode: "BUT 3",
     items: [
       "Trouver une alternance en développement web ou logiciel pour accumuler de l'expérience sur la durée",
-      "Apprendre Docker et les bases du déploiement — ma compétence C3 est la plus en retard",
+      "Approfondir le développement web moderne (React, écosystèmes front-end actuels) et me lancer sérieusement sur le mobile",
       "Travailler dans une équipe avec des rituels agiles (Scrum, sprints)",
       "Contribuer à un projet open source, même modestement",
     ],
@@ -19,9 +19,9 @@ const objectifs = [
   {
     periode: "Après le BUT",
     items: [
-      "Travailler dans une équipe produit sur une application à fort impact utilisateur",
-      "Continuer à monter en compétences back-end : architecture, performance, sécurité",
-      "Peut-être une spécialisation progressive vers le DevOps selon ce que les alternances m'apportent",
+      "Travailler dans une équipe produit sur une application à fort impact utilisateur, web ou mobile",
+      "Continuer à monter en compétences sur le développement web et mobile : architecture, performance, expérience utilisateur",
+      "Peut-être une spécialisation progressive vers le mobile selon ce que les alternances m'apportent",
     ],
   },
 ];
