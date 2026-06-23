@@ -21,7 +21,7 @@ const saes = [
         sol: "Documentation des modèles en amont, tests progressifs avant intégration complète",
       },
       {
-        pb: "Coordination d'une équipe de 5 avec des niveaux différents",
+        pb: "Coordination d'une équipe avec des niveaux différents",
         sol: "Points réguliers, découpage clair des tâches, aide aux bloqués sans faire à leur place",
       },
     ],
@@ -42,38 +42,101 @@ const saes = [
     id: "bdd",
     label: "S1 · BUT 1",
     titre: "SAÉ S104 — Bases de données et langage SQL",
-    contexte: "Individuel · Semestre 1",
+    contexte: "Individuel · Semestre 1 · PostgreSQL",
     objectif:
-      "Concevoir une base de données sur les libertés dans le monde : modélisation entités-associations, schéma relationnel, scripts SQL de création manuelle et via AGL, peuplement à partir d'un fichier CSV.",
+      "Concevoir de A à Z une base de données sur les libertés politiques dans le monde. Trois parties : script SQL manuel avec modèle entités-associations et schéma relationnel, modélisation via AGL (logigramme comparatif), et peuplement des tables depuis un fichier CSV.",
     organisation:
-      "Travail individuel. La SAÉ était découpée en trois parties : script manuel, modélisation AGL avec comparaison, puis peuplement des tables.",
+      "Travail entièrement individuel. J'ai d'abord construit le modèle EA (4 entités : REGION, COUNTRY, FREEDOM, STATUS), puis le schéma relationnel avec les clés étrangères, puis le script SQL. Ensuite j'ai refait la même base avec un AGL pour comparer les deux approches. Enfin, le peuplement via une table temporaire et des INSERT conditionnels.",
     role: "Travail entièrement individuel.",
     difficultes: [
       {
-        pb: "Différence entre script SQL manuel et généré par AGL",
-        sol: "Comparaison point par point : le script AGL ajoute NOT NULL partout et sépare les ALTER TABLE — plus rigoureux mais moins lisible au premier coup d'œil",
+        pb: "Comprendre la différence entre script SQL manuel et généré par AGL",
+        sol: "Comparaison point par point : le script AGL ajoute systématiquement NOT NULL, sépare les ALTER TABLE des CREATE TABLE, et nomme les contraintes. Plus rigoureux, mais moins lisible en première lecture.",
       },
       {
-        pb: "Peuplement depuis un CSV avec plusieurs tables liées",
-        sol: "Utilisation d'une table temporaire + INSERT conditionnels avec NOT EXISTS pour éviter les doublons",
+        pb: "Peuplement depuis un CSV avec plusieurs tables interdépendantes",
+        sol: "Création d'une table temporaire contenant toutes les colonnes du CSV, puis INSERT sélectifs avec NOT EXISTS pour chaque table cible — ce qui évite les doublons et respecte les contraintes de clés étrangères.",
+      },
+      {
+        pb: "Choisir entre association fonctionnelle et maillée pour l'illustration AGL",
+        sol: "Les cardinalités de la SAÉ ne produisaient pas d'association fonctionnelle naturelle. J'ai adapté une partie du modèle pour illustrer les deux cas, en le justifiant dans le rapport.",
       },
     ],
     competences: [
-      { label: "Gérer", avant: "SQL intuitif sans modélisation", apres: "Modélisation EA → schéma → SQL → données" },
+      { label: "Gérer", avant: "SQL intuitif sans modélisation formelle", apres: "Modélisation EA complète → schéma relationnel → SQL → peuplement depuis CSV" },
+      { label: "Optimiser", avant: "Pas de notion de normalisation", apres: "Conscience des clés étrangères, NOT NULL, et de leur impact sur les requêtes" },
     ],
     perspectives:
       "Aller plus loin sur les requêtes complexes (jointures multiples, agrégats). Découvrir les procédures stockées et les index pour l'optimisation.",
     preuves: [],
   },
   {
+    id: "calculatrice",
+    label: "S2 · BUT 1",
+    titre: "SAÉ Calculatrice — Programmation Orientée Objet Java",
+    contexte: "Individuel · Semestre 2 · Java",
+    objectif:
+      "Concevoir une calculatrice en Java en utilisant les principes de la POO : hiérarchie de classes, héritage, polymorphisme. Résultat : une calculatrice capable d'évaluer des expressions arithmétiques complexes imbriquées, représentées sous forme d'arbre d'expressions.",
+    organisation:
+      "Travail individuel. J'ai d'abord modélisé la hiérarchie avant d'écrire une seule ligne de code : Expression (abstraite) → Nombre (feuille) et Operation (abstraite) → Addition, Soustraction, Multiplication, Division.",
+    role: "Conception de l'architecture et développement complet.",
+    difficultes: [
+      {
+        pb: "Comprendre le polymorphisme appliqué à un arbre d'expressions",
+        sol: "La méthode valeur() est abstraite dans Expression. Chaque classe concrète l'implémente différemment. Java appelle automatiquement la bonne version selon le type réel de l'objet — c'est ça le polymorphisme.",
+      },
+      {
+        pb: "Représenter ((17 - 2) / (2 + 3)) comme un objet",
+        sol: "Chaque opération prend deux Expression en paramètre — qui peuvent elles-mêmes être des opérations. On construit un arbre, l'évaluation se fait récursivement.",
+      },
+    ],
+    code: `abstract class Expression {
+    public abstract double valeur();
+}
+
+class Nombre extends Expression {
+    private double valeur;
+    public Nombre(double valeur) { this.valeur = valeur; }
+    public double valeur() { return this.valeur; }
+    public String toString() { return Double.toString(this.valeur); }
+}
+
+abstract class Operation extends Expression {
+    protected Expression operande1, operande2;
+    public Operation(Expression op1, Expression op2) {
+        this.operande1 = op1; this.operande2 = op2;
+    }
+}
+
+class Division extends Operation {
+    public Division(Expression op1, Expression op2) { super(op1, op2); }
+    public double valeur() { return operande1.valeur() / operande2.valeur(); }
+    public String toString() { return "(" + operande1 + " / " + operande2 + ")"; }
+}
+
+// Test : ((17.0 - 2.0) / (2.0 + 3.0)) = 3.0
+Expression d = new Division(
+    new Soustraction(new Nombre(17), new Nombre(2)),
+    new Addition(new Nombre(2), new Nombre(3))
+);
+System.out.println(d + " = " + d.valeur()); // 3.0`,
+    competences: [
+      { label: "Réaliser", avant: "Code procédural, pas de conception objet", apres: "Architecture OOP : héritage + polymorphisme + encapsulation" },
+      { label: "Optimiser", avant: "Duplication de logique par type d'opération", apres: "Chaque classe encapsule sa logique — code extensible sans modifier l'existant" },
+    ],
+    perspectives:
+      "Ajouter la gestion d'erreurs (division par zéro). Implémenter un parser pour lire des expressions depuis une chaîne texte. Ajouter des fonctions mathématiques (puissance, racine carrée).",
+    preuves: [],
+  },
+  {
     id: "gestion",
     label: "S2 · BUT 1",
     titre: "SAÉ 2.05 — Gestion de projet",
-    contexte: "Binôme avec Hakan Turkmen · Semestre 2",
+    contexte: "Binôme · Semestre 2",
     objectif:
-      "Appliquer les méthodes de gestion de projet sur un cas fictif : réaménager une chambre pour la louer. Définir les enjeux, contraintes, WBS, Gantt, objectifs SMART, risques.",
+      "Appliquer les méthodes de gestion de projet sur un cas fictif : réaménager une chambre pour la louer. Définir les enjeux, contraintes, WBS, Gantt, objectifs SMART, analyse des risques.",
     organisation:
-      "Binôme. Répartition des tâches entre analyse des besoins (plutôt moi) et construction du Gantt et du tableau des ressources (plutôt Hakan). Points réguliers pour aligner nos réponses.",
+      "Binôme. Répartition des tâches : analyse des besoins et rédaction des objectifs SMART d'un côté, construction du Gantt et tableau des ressources de l'autre. Points réguliers pour aligner les réponses.",
     role: "Analyse des besoins et contraintes, objectifs SMART, analyse des risques.",
     difficultes: [
       {
@@ -82,22 +145,22 @@ const saes = [
       },
       {
         pb: "Trouver des objectifs SMART cohérents avec le cas",
-        sol: "Repartir du besoin client plutôt que d'inventer des objectifs en l'air",
+        sol: "Repartir du besoin client plutôt que d'inventer des objectifs abstraits — ce qui a rendu le SMART plus ancré",
       },
     ],
     competences: [
-      { label: "Conduire", avant: "Aucune méthode formelle de gestion", apres: "Gantt, WBS, SMART, analyse des risques opérationnelle" },
-      { label: "Collaborer", avant: "Travail en binôme informel", apres: "Organisation structurée avec répartition claire" },
+      { label: "Conduire", avant: "Aucune méthode formelle de gestion", apres: "Gantt, WBS, SMART, analyse des risques avec plan d'action" },
+      { label: "Collaborer", avant: "Travail en binôme informel", apres: "Organisation structurée avec répartition claire des tâches" },
     ],
     perspectives:
-      "Appliquer ces méthodes sur un projet informatique réel plutôt qu'un cas fictif. Découvrir des outils comme Jira ou Trello pour suivre l'avancement en temps réel.",
+      "Appliquer ces méthodes sur un projet informatique réel. Découvrir des outils comme Jira ou Trello pour suivre l'avancement en temps réel.",
     preuves: [],
   },
   {
     id: "expression",
     label: "S1 · BUT 1",
     titre: "SAÉ Expression",
-    contexte: "BUT 1 · Semestre 1",
+    contexte: "Groupe · Semestre 1",
     objectif:
       "Production de documents écrits structurés et présentation orale. Travailler la communication écrite et orale en contexte professionnel.",
     organisation: "Travail en groupe.",
@@ -115,26 +178,28 @@ export default function SAE() {
   const [ouvert, setOuvert] = useState("jupiter");
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 animate-fade-in">
       <div>
-        <h2 className="text-2xl font-semibold mb-1">SAÉ</h2>
-        <p className="text-zinc-400 text-sm">Situations d'apprentissage et d'évaluation — toutes les SAÉ archivées avec analyse</p>
+        <h2 className="text-2xl font-semibold mb-1 tracking-tight">SAÉ</h2>
+        <p className="text-zinc-500 text-sm">Situations d'apprentissage et d'évaluation — analyse réflexive de chaque projet</p>
       </div>
 
       <div className="space-y-3">
         {saes.map((s) => (
-          <div key={s.id} className="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden">
+          <div key={s.id} className="bg-zinc-900/80 border border-zinc-800 rounded-xl overflow-hidden card-hover">
             <button
-              className="w-full text-left p-5 hover:bg-zinc-800/40 transition-all"
+              className="w-full text-left p-5 hover:bg-zinc-800/30 transition-all"
               onClick={() => setOuvert(ouvert === s.id ? null : s.id)}
             >
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <span className="text-xs text-indigo-400 font-mono">{s.label}</span>
-                  <h3 className="text-base font-medium mt-0.5">{s.titre}</h3>
+                  <h3 className="text-base font-medium mt-0.5 text-zinc-100">{s.titre}</h3>
                   <p className="text-xs text-zinc-500 mt-1">{s.contexte}</p>
                 </div>
-                <span className="text-zinc-600 text-sm shrink-0 mt-1">{ouvert === s.id ? "▲" : "▼"}</span>
+                <span className="text-zinc-600 text-xs shrink-0 mt-1 border border-zinc-700 rounded px-1.5 py-0.5">
+                  {ouvert === s.id ? "▲" : "▼"}
+                </span>
               </div>
             </button>
 
@@ -148,11 +213,11 @@ export default function SAE() {
 
                 {/* Organisation + rôle */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <p className="text-xs text-zinc-500 uppercase tracking-wider mb-2">Organisation du travail</p>
+                  <div className="bg-zinc-800/40 rounded-lg p-4">
+                    <p className="text-xs text-zinc-500 uppercase tracking-wider mb-2">Organisation</p>
                     <p className="text-sm text-zinc-300 leading-relaxed">{s.organisation}</p>
                   </div>
-                  <div>
+                  <div className="bg-zinc-800/40 rounded-lg p-4">
                     <p className="text-xs text-zinc-500 uppercase tracking-wider mb-2">Mon rôle</p>
                     <p className="text-sm text-zinc-300 leading-relaxed">{s.role}</p>
                   </div>
@@ -161,15 +226,25 @@ export default function SAE() {
                 {/* Difficultés */}
                 {s.difficultes.length > 0 && (
                   <div>
-                    <p className="text-xs text-zinc-500 uppercase tracking-wider mb-3">Difficultés rencontrées & solutions</p>
+                    <p className="text-xs text-zinc-500 uppercase tracking-wider mb-3">Difficultés & solutions</p>
                     <div className="space-y-3">
                       {s.difficultes.map((d, i) => (
-                        <div key={i} className="bg-zinc-800/50 rounded-lg p-4 space-y-2">
-                          <p className="text-sm text-rose-300 font-medium">Problème : {d.pb}</p>
-                          <p className="text-sm text-emerald-300">Solution : {d.sol}</p>
+                        <div key={i} className="bg-zinc-800/50 rounded-lg p-4 space-y-2 border border-zinc-700/50">
+                          <p className="text-sm text-rose-300 font-medium">⚠ {d.pb}</p>
+                          <p className="text-sm text-emerald-300">✓ {d.sol}</p>
                         </div>
                       ))}
                     </div>
+                  </div>
+                )}
+
+                {/* Bloc code si présent */}
+                {s.code && (
+                  <div>
+                    <p className="text-xs text-zinc-500 uppercase tracking-wider mb-3">Extrait de code — architecture principale</p>
+                    <pre className="bg-zinc-950 border border-zinc-800 rounded-lg p-4 overflow-x-auto text-xs text-zinc-300 font-mono leading-relaxed">
+                      {s.code}
+                    </pre>
                   </div>
                 )}
 
@@ -178,12 +253,14 @@ export default function SAE() {
                   <p className="text-xs text-zinc-500 uppercase tracking-wider mb-3">Compétences mobilisées</p>
                   <div className="space-y-3">
                     {s.competences.map((c, i) => (
-                      <div key={i} className="space-y-1.5">
-                        <span className="text-xs bg-indigo-900/40 text-indigo-300 border border-indigo-800 px-2.5 py-0.5 rounded-full">{c.label}</span>
-                        <div className="flex gap-3 text-sm ml-1">
-                          <span className="text-zinc-500">Avant : <span className="text-zinc-400">{c.avant}</span></span>
+                      <div key={i} className="flex flex-col sm:flex-row sm:items-center gap-2">
+                        <span className="text-xs bg-indigo-900/40 text-indigo-300 border border-indigo-800/60 px-2.5 py-0.5 rounded-full shrink-0">
+                          {c.label}
+                        </span>
+                        <div className="flex items-center gap-2 text-sm text-zinc-500 text-xs flex-wrap">
+                          <span className="text-zinc-500">{c.avant}</span>
                           <span className="text-zinc-600">→</span>
-                          <span className="text-zinc-400">Après : <span className="text-zinc-200">{c.apres}</span></span>
+                          <span className="text-zinc-300">{c.apres}</span>
                         </div>
                       </div>
                     ))}
@@ -191,7 +268,7 @@ export default function SAE() {
                 </div>
 
                 {/* Preuves */}
-                {s.preuves.length > 0 && (
+                {s.preuves && s.preuves.length > 0 && (
                   <div>
                     <p className="text-xs text-zinc-500 uppercase tracking-wider mb-3">Preuves</p>
                     <div className="flex flex-wrap gap-3">

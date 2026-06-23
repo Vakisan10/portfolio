@@ -85,16 +85,16 @@ const competences = [
     desc: "Piloter un projet informatique",
     couleur: "rose",
     experiences: [
-      "SAÉ 2.05 — Gantt, WBS, objectifs SMART, analyse des risques (binôme)",
+      "SAÉ 2.05 — Gantt, WBS, objectifs SMART, analyse des risques (binôme) — rapport complet",
       "SAÉ Jupiter S3 & S4 — coordination d'une équipe de 5 sur plusieurs semaines",
       "Stage — gestion en autonomie avec points réguliers maître de stage",
     ],
-    preuves: [],
+    preuves: [{ label: "Rapport SAÉ 2.05 — Gestion de projet (PDF)", url: "https://github.com/Vakisan10/portfolio/raw/main/public/Gestion_de_projet_compte_rendue__2_.pdf" }],
     analyse:
       "La SAÉ 2.05 m'a donné les outils formels (Gantt, WBS, SMART). Jupiter m'a appris que la gestion de projet en vrai c'est surtout gérer les humains : qui fait quoi, quand, et comment on rattrape quand quelqu'un est bloqué. En stage, c'était différent encore : gérer ses propres priorités sans équipe, juste avec des deadlines et une cliente qui attend.",
     niveau: { avant: "Aucune méthode formelle", apres: "Maîtrise des outils de base, expérience en groupe réel" },
     ameliorer: "Utiliser Jira ou Trello dans un contexte pro réel, apprendre les méthodes agiles (Scrum).",
-    tags: ["Gantt", "WBS", "SMART", "Gestion d'équipe"],
+    tags: ["Gantt", "WBS", "SMART", "Analyse des risques", "Gestion d'équipe"],
   },
   {
     id: "collaborer",
