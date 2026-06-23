@@ -48,8 +48,7 @@ export default function Accueil({ navigate }) {
         }}>Vakisan</h1>
         <h1 style={{
           fontSize: "clamp(40px, 7vw, 90px)", fontWeight: 800, lineHeight: 1,
-          color: "rgba(255,255,255,0.13)", letterSpacing: "-2px", margin: 0,
-          WebkitTextStroke: "1px rgba(255,255,255,0.18)",
+          color: "#fff", letterSpacing: "-2px", margin: 0,
         }}>Mathignanasingam</h1>
       </div>
 
