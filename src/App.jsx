@@ -94,7 +94,7 @@ export default function App() {
             display: "flex", alignItems: "center", justifyContent: "center",
             fontWeight: 700, fontSize: 13, color: "#fff", letterSpacing: 0.5
           }}>VM</div>
-          <span style={{ fontSize: 14, color: "rgba(255,255,255,0.5)", fontWeight: 500 }}>Vakisan M.</span>
+          <span style={{ fontSize: 14, color: "#fff", fontWeight: 500 }}>Vakisan M.</span>
         </div>
 
         <div style={{ display: "flex", gap: 4 }}>
