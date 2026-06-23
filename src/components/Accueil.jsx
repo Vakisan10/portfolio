@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 const phrases = [
   "Étudiant BUT Informatique · IUT Villetaneuse",
-  "En recherche d'alternance · Développement web & logiciel",
+  "En recherche de stage · Développement web & logiciel",
   "Java · React · SQL · Git · WordPress",
 ];
 

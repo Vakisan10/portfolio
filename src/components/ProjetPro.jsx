@@ -10,7 +10,7 @@ const objectifs = [
   {
     periode: "BUT 3",
     items: [
-      "Trouver une alternance en développement web ou logiciel pour accumuler de l'expérience sur la durée",
+      "Trouver un stage de 14 à 16 semaines en développement web ou logiciel pour accumuler de l'expérience sur la durée",
       "Approfondir le développement web moderne (React, écosystèmes front-end actuels) et me lancer sérieusement sur le mobile",
       "Travailler dans une équipe avec des rituels agiles (Scrum, sprints)",
       "Contribuer à un projet open source, même modestement",
@@ -19,9 +19,10 @@ const objectifs = [
   {
     periode: "Après le BUT",
     items: [
+      "Poursuivre en bac+5 — école d'ingénieur ou master — pour aller plus loin dans la formation et ouvrir davantage de portes",
       "Travailler dans une équipe produit sur une application à fort impact utilisateur, web ou mobile",
       "Continuer à monter en compétences sur le développement web et mobile : architecture, performance, expérience utilisateur",
-      "Peut-être une spécialisation progressive vers le mobile selon ce que les alternances m'apportent",
+      "Peut-être une spécialisation progressive vers le mobile selon les expériences accumulées",
     ],
   },
 ];
