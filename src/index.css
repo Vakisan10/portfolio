@@ -1,61 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
   margin: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
-  background-color: #09090b;
-}
-
-.font-mono {
-  font-family: 'JetBrains Mono', monospace;
-}
-
-/* Scrollbar hide */
-.scrollbar-hide::-webkit-scrollbar { display: none; }
-.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-
-/* Fade-in animation */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.animate-fade-in {
-  animation: fadeInUp 0.45s cubic-bezier(.22,1,.36,1) both;
-}
-.animate-fade-in-delay {
-  animation: fadeInUp 0.45s cubic-bezier(.22,1,.36,1) 0.1s both;
-}
-.animate-fade-in-delay-2 {
-  animation: fadeInUp 0.45s cubic-bezier(.22,1,.36,1) 0.2s both;
-}
-
-/* Progress bar animation */
-@keyframes growWidth {
-  from { width: 0%; }
-  to   { width: var(--target-width); }
-}
-.animate-bar {
-  animation: growWidth 1.1s cubic-bezier(.22,1,.36,1) 0.3s both;
-}
-
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Glow border on hover */
-.card-hover {
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-.card-hover:hover {
-  border-color: #3730a3;
-  box-shadow: 0 0 0 1px #3730a340, 0 4px 24px #6366f110;
 }
