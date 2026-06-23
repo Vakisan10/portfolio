@@ -1,6 +1,6 @@
 const etapes = [
   {
-    periode: "2023 – aujourd'hui",
+    periode: "2024 – aujourd'hui",
     titre: "BUT Informatique — IUT de Villetaneuse",
     sous: "Sorbonne Paris Nord · 2e année",
     texte:
@@ -8,7 +8,7 @@ const etapes = [
     couleur: "indigo",
   },
   {
-    periode: "2020 – 2023",
+    periode: "2021 – 2024",
     titre: "Bac STI2D",
     sous: "Sciences et Technologies de l'Industrie et du Développement Durable",
     texte:
