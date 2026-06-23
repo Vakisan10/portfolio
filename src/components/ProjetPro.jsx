@@ -54,7 +54,7 @@ export default function ProjetPro() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-5 space-y-2">
             <h3 className="text-sm font-medium">Développeur full-stack</h3>
-            <p className="text-sm text-zinc-400">Concevoir et maintenir des applications web de bout en bout — front et back. C'est ce que la SAÉ Jupiter m'a donné un premier aperçu de faire.</p>
+            <p className="text-sm text-zinc-400">Concevoir et maintenir des applications web de bout en bout — front et back. C'est ce que ma SAÉ d'application de gestion en groupe m'a donné un premier aperçu de faire.</p>
           </div>
           <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-5 space-y-2">
             <h3 className="text-sm font-medium">Développeur back-end</h3>
@@ -109,7 +109,7 @@ export default function ProjetPro() {
       <div className="bg-zinc-900 border border-zinc-800 border-l-2 border-l-indigo-500 rounded-xl p-5 space-y-2">
         <h3 className="text-sm font-medium">En lien avec mon parcours</h3>
         <p className="text-sm text-zinc-400 leading-relaxed">
-          Ce projet pro n'est pas sorti de nulle part. Le BUT 1 m'a donné les bases. La SAÉ Jupiter m'a montré que je pouvais coordonner un projet complexe et le livrer. Le stage m'a exposé à un environnement professionnel réel. Chaque étape a confirmé que le développement logiciel est le bon chemin — et que j'ai encore beaucoup à apprendre, ce qui est exactement là où je veux être.
+          Ce projet pro n'est pas sorti de nulle part. Le BUT 1 m'a donné les bases. La SAÉ d'application de gestion en groupe m'a montré que je pouvais coordonner un projet complexe et le livrer. Le stage m'a exposé à un environnement professionnel réel. Chaque étape a confirmé que le développement logiciel est le bon chemin — et que j'ai encore beaucoup à apprendre, ce qui est exactement là où je veux être.
         </p>
       </div>
     </div>

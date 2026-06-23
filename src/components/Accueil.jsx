@@ -9,7 +9,7 @@ const phrases = [
 const navCards = [
   { id: "parcours",    num: "01", icon: "🎓", titre: "Parcours",    desc: "STI2D → BUT Informatique" },
   { id: "competences", num: "02", icon: "⚡", titre: "Compétences", desc: "6 compétences BUT avec preuves" },
-  { id: "sae",         num: "03", icon: "🚀", titre: "SAÉ",          desc: "Jupiter S3 & S4 · BDD · Gestion" },
+  { id: "sae",         num: "03", icon: "🚀", titre: "SAÉ",          desc: "Application de gestion · BDD · Réseau" },
   { id: "stage",       num: "04", icon: "💼", titre: "Stage",        desc: "Lys Conseil · Webmaster · 8 sem" },
 ];
 

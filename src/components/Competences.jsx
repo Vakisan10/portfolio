@@ -8,16 +8,16 @@ const competences = [
     desc: "Développer des applications qui répondent à un besoin",
     couleur: "indigo",
     experiences: [
-      "SAÉ Jupiter S3 & S4 — application Java/Spring en groupe de 5",
+      "SAÉ S3 & S4 — application Java/Spring en groupe de 5",
       "Stage Lys Conseil — site vitrine HTML/CSS livré à un client réel",
       "Contribution à une page React Native en stage",
     ],
     preuves: [
-      { label: "SAÉ Jupiter S4 — GitHub", url: "https://github.com/Vakisan10/SAES401_Jupiter5" },
-      { label: "SAÉ Jupiter S3 — GitHub", url: "https://github.com/At9ph/SAE_Jupiter_D" },
+      { label: "SAÉ S4 — GitHub", url: "https://github.com/Vakisan10/SAES401_Jupiter5" },
+      { label: "SAÉ S3 — GitHub", url: "https://github.com/At9ph/SAE_Jupiter_D" },
     ],
     analyse:
-      "Avant la SAÉ Jupiter, je savais coder des petits programmes seul. Ce projet m'a obligé à penser une architecture — comment les composants communiquent, comment la BDD s'intègre, comment plusieurs personnes peuvent travailler sur le même repo sans tout casser. En stage, créer un site pour un vrai client a ajouté une dimension que les SAÉ ne donnent pas : quelqu'un attend le résultat, et ce résultat va être utilisé.",
+      "Avant cette SAÉ, je savais coder des petits programmes seul. Ce projet m'a obligé à penser une architecture — comment les composants communiquent, comment la BDD s'intègre, comment plusieurs personnes peuvent travailler sur le même repo sans tout casser. En stage, créer un site pour un vrai client a ajouté une dimension que les SAÉ ne donnent pas : quelqu'un attend le résultat, et ce résultat va être utilisé.",
     niveau: { avant: "Débutant", apres: "Intermédiaire confirmé" },
     ameliorer: "Aller plus loin sur les tests automatisés et l'architecture front-end moderne (Next.js, TypeScript).",
     tags: ["Java", "Spring", "HTML", "CSS", "React Native"],
@@ -29,15 +29,15 @@ const competences = [
     desc: "Améliorer les performances ou la qualité d'une application",
     couleur: "violet",
     experiences: [
-      "SAÉ Jupiter S4 — reprise et amélioration complète du projet S3",
+      "SAÉ S4 — reprise et amélioration complète du projet S3",
       "Site vitrine en stage — tests responsive sur mobile et desktop",
       "SAÉ S104 — comparaison script SQL manuel vs généré par AGL",
     ],
     preuves: [
-      { label: "SAÉ Jupiter S4 — GitHub", url: "https://github.com/Vakisan10/SAES401_Jupiter5" },
+      { label: "SAÉ S4 — GitHub", url: "https://github.com/Vakisan10/SAES401_Jupiter5" },
     ],
     analyse:
-      "L'itération entre S3 et S4 sur Jupiter, c'est l'exemple le plus concret que j'ai d'optimisation. On a regardé ce qui ne fonctionnait pas bien, ce qui était mal structuré, et on a reconstruit certaines parties. Ce n'est pas très spectaculaire à montrer mais c'est l'exercice le plus formateur : relire son propre code avec un regard critique après plusieurs mois.",
+      "L'itération entre S3 et S4, c'est l'exemple le plus concret que j'ai d'optimisation. On a regardé ce qui ne fonctionnait pas bien, ce qui était mal structuré, et on a reconstruit certaines parties. Ce n'est pas très spectaculaire à montrer mais c'est l'exercice le plus formateur : relire son propre code avec un regard critique après plusieurs mois.",
     niveau: { avant: "Pas de recul critique", apres: "Capable de relire et itérer" },
     ameliorer: "Apprendre à mesurer les performances (profiling, benchmarks) plutôt que d'optimiser à l'instinct.",
     tags: ["Refactoring", "Responsive", "SQL"],
@@ -49,15 +49,16 @@ const competences = [
     desc: "Administration Linux, réseau, virtualisation, déploiement",
     couleur: "emerald",
     experiences: [
-      "SAÉ administration système en BUT 1 (Linux, configuration réseau)",
+      "SAÉ S203 — installation et configuration d'un serveur web Apache2 (httpd.conf, .htaccess)",
+      "SAÉ S203 — manipulation de machines virtuelles et mise en place de la communication réseau hôte/VM",
       "Hébergement de sites web sur Hostinger (stage)",
     ],
     preuves: [],
     analyse:
-      "C'est la compétence où j'ai le moins de preuves solides à ce stade. Les bases Linux et réseau sont là depuis le BUT 1, mais je n'ai pas encore eu de projet d'envergure sur l'administration ou le déploiement. C'est ce que je veux corriger en BUT 3 en cherchant une alternance qui m'expose à ces environnements.",
-    niveau: { avant: "Notions", apres: "Bases opérationnelles" },
-    ameliorer: "Docker, CI/CD, déploiement d'une application complète sur un VPS.",
-    tags: ["Linux", "Réseau", "Hostinger"],
+      "La SAÉ S203 m'a fait passer de la théorie réseau vue en cours à une configuration réelle. Installer Apache2, c'est une chose ; comprendre ce que chaque directive de httpd.conf change concrètement, ou pourquoi une règle .htaccess bloque ou autorise un accès, c'est différent. La partie la plus formatrice a été de faire communiquer la VM avec la machine hôte : ça m'a obligé à comprendre l'adressage et la configuration réseau plutôt que de la subir.",
+    niveau: { avant: "Notions théoriques de réseau", apres: "Configuration réelle d'un serveur Apache2 et d'une communication hôte/VM" },
+    ameliorer: "Aller plus loin sur la sécurisation d'un serveur (HTTPS, droits d'accès), Docker, et le déploiement d'une application complète sur un VPS.",
+    tags: ["Linux", "Réseau", "Apache2", "Virtualisation"],
   },
   {
     id: "gerer",
@@ -68,7 +69,7 @@ const competences = [
     experiences: [
       "SAÉ S104 — modèle EA, schéma relationnel, scripts SQL, peuplement depuis CSV",
       "Comparaison script manuel vs généré par AGL (logigramme, clés primaires/étrangères)",
-      "BDD intégrée dans l'application Jupiter",
+      "BDD intégrée dans l'application développée en SAÉ S3 & S4",
       "Base de données WordPress via Fluent Form (stage Lys Conseil)",
     ],
     preuves: [],
@@ -86,12 +87,12 @@ const competences = [
     couleur: "rose",
     experiences: [
       "SAÉ 2.05 — Gantt, WBS, objectifs SMART, analyse des risques (binôme) — rapport complet",
-      "SAÉ Jupiter S3 & S4 — coordination d'une équipe de 5 sur plusieurs semaines",
+      "SAÉ S3 & S4 — coordination d'une équipe de 5 sur plusieurs semaines",
       "Stage — gestion en autonomie avec points réguliers maître de stage",
     ],
     preuves: [{ label: "Rapport SAÉ 2.05 — Gestion de projet (PDF)", url: "https://github.com/Vakisan10/portfolio/raw/main/public/Gestion_de_projet_compte_rendue__2_.pdf" }],
     analyse:
-      "La SAÉ 2.05 m'a donné les outils formels (Gantt, WBS, SMART). Jupiter m'a appris que la gestion de projet en vrai c'est surtout gérer les humains : qui fait quoi, quand, et comment on rattrape quand quelqu'un est bloqué. En stage, c'était différent encore : gérer ses propres priorités sans équipe, juste avec des deadlines et une cliente qui attend.",
+      "La SAÉ 2.05 m'a donné les outils formels (Gantt, WBS, SMART). La SAÉ S3 & S4 m'a appris que la gestion de projet en vrai c'est surtout gérer les humains : qui fait quoi, quand, et comment on rattrape quand quelqu'un est bloqué. En stage, c'était différent encore : gérer ses propres priorités sans équipe, juste avec des deadlines et une cliente qui attend.",
     niveau: { avant: "Aucune méthode formelle", apres: "Maîtrise des outils de base, expérience en groupe réel" },
     ameliorer: "Utiliser Jira ou Trello dans un contexte pro réel, apprendre les méthodes agiles (Scrum).",
     tags: ["Gantt", "WBS", "SMART", "Analyse des risques", "Gestion d'équipe"],
@@ -103,13 +104,13 @@ const competences = [
     desc: "Travailler dans un contexte professionnel",
     couleur: "cyan",
     experiences: [
-      "SAÉ Jupiter S3 & S4 — Git collaboratif en groupe de 5 (branches, merges, conflits)",
+      "SAÉ S3 & S4 — Git collaboratif en groupe de 5 (branches, merges, conflits)",
       "Stage — relation client réelle, communication par WhatsApp, validation progressive",
       "Collaboration avec une étudiante de 3e année sur React Native",
     ],
     preuves: [
-      { label: "SAÉ Jupiter S3 — GitHub", url: "https://github.com/At9ph/SAE_Jupiter_D" },
-      { label: "SAÉ Jupiter S4 — GitHub", url: "https://github.com/Vakisan10/SAES401_Jupiter5" },
+      { label: "SAÉ S3 — GitHub", url: "https://github.com/At9ph/SAE_Jupiter_D" },
+      { label: "SAÉ S4 — GitHub", url: "https://github.com/Vakisan10/SAES401_Jupiter5" },
     ],
     analyse:
       "Git en groupe, c'est quelque chose qui s'apprend en le faisant. Les premiers conflits de merge font peur, après on comprend que c'est juste de la logique. Ce que le stage a ajouté : la collaboration avec une personne qui n'est pas étudiant, qui a ses propres contraintes et qui attend des résultats concrets. J'ai appris à formuler mes questions différemment, à présenter mon travail de façon plus professionnelle.",

@@ -4,7 +4,7 @@ const saes = [
   {
     id: "jupiter",
     label: "S3 & S4 · Projet phare",
-    titre: "SAÉ Jupiter — Application de gestion",
+    titre: "SAÉ — Application de gestion",
     contexte: "Groupe de 5 · Semestres 3 et 4",
     objectif:
       "Concevoir et développer une application complète de gestion en Java/Spring Boot avec base de données intégrée, sur deux semestres — d'abord une première version en S3, puis une version améliorée en S4.",
@@ -14,15 +14,15 @@ const saes = [
     difficultes: [
       {
         pb: "Conflits Git à répétition en S3",
-        sol: "Mise en place de branches par fonctionnalité + règle de merge uniquement après relecture",
+        sol: "Mise en place de branches par fonctionnalité, avec une règle de merge uniquement après relecture",
       },
       {
         pb: "Intégration de la base de données dans l'application",
-        sol: "Documentation des modèles en amont, tests progressifs avant intégration complète",
+        sol: "Documentation des modèles en amont, puis tests progressifs avant intégration complète",
       },
       {
         pb: "Coordination d'une équipe avec des niveaux différents",
-        sol: "Points réguliers, découpage clair des tâches, aide aux bloqués sans faire à leur place",
+        sol: "Points réguliers, découpage clair des tâches, aide aux bloqués sans faire le travail à leur place",
       },
     ],
     competences: [
@@ -68,7 +68,9 @@ const saes = [
     ],
     perspectives:
       "Aller plus loin sur les requêtes complexes (jointures multiples, agrégats). Découvrir les procédures stockées et les index pour l'optimisation.",
-    preuves: [],
+    preuves: [
+      { label: "Rapport SAÉ S104 — Bases de données (PDF)", url: "https://github.com/Vakisan10/portfolio/raw/main/public/Mathignanasingam_Vakisan_sae.pdf" },
+    ],
   },
   {
     id: "calculatrice",
@@ -157,19 +159,35 @@ System.out.println(d + " = " + d.valeur()); // 3.0`,
     preuves: [],
   },
   {
-    id: "expression",
-    label: "S1 · BUT 1",
-    titre: "SAÉ Expression",
-    contexte: "Groupe · Semestre 1",
+    id: "reseau",
+    label: "S2 · BUT 1",
+    titre: "SAÉ S203 — Installation de services réseau",
+    contexte: "Semestre 2 · Apache2 · Virtualisation",
     objectif:
-      "Production de documents écrits structurés et présentation orale. Travailler la communication écrite et orale en contexte professionnel.",
-    organisation: "Travail en groupe.",
-    role: "Rédaction et contribution à la présentation.",
-    difficultes: [],
-    competences: [
-      { label: "Collaborer", avant: "Communication informelle", apres: "Structuration d'un document pro, prise de parole en groupe" },
+      "Installer et configurer un serveur web Apache2, puis mettre en place la communication réseau entre une machine virtuelle et la machine hôte.",
+    organisation:
+      "Mise en place d'une VM dédiée au serveur, configuration des fichiers httpd.conf et des règles .htaccess, puis vérification de l'accès au serveur depuis la machine hôte.",
+    role: "Installation et configuration du serveur, manipulation de la VM, mise en place de la communication réseau hôte/VM.",
+    difficultes: [
+      {
+        pb: "Comprendre la structure de httpd.conf et son impact sur le comportement du serveur",
+        sol: "Modification progressive des directives une par une, en testant l'effet de chaque changement avant de passer à la suivante",
+      },
+      {
+        pb: "Restreindre ou autoriser l'accès à certains répertoires via .htaccess",
+        sol: "Tests successifs des règles depuis la machine hôte pour vérifier qu'elles produisaient bien le comportement attendu",
+      },
+      {
+        pb: "Établir la communication réseau entre la VM et la machine hôte",
+        sol: "Vérification de la configuration réseau de la VM (adressage, mode de connexion) jusqu'à obtenir un accès stable au serveur depuis l'hôte",
+      },
     ],
-    perspectives: "Continuer à travailler la prise de parole en public, notamment en présentation technique.",
+    competences: [
+      { label: "Administrer", avant: "Notions théoriques sur les serveurs web", apres: "Installation et configuration réelle d'Apache2 (httpd.conf, .htaccess)" },
+      { label: "Administrer", avant: "Pas de pratique de la virtualisation", apres: "Manipulation de VM et configuration de la communication réseau hôte/VM" },
+    ],
+    perspectives:
+      "Approfondir la sécurisation d'un serveur web (HTTPS, droits d'accès plus fins). Découvrir d'autres serveurs (Nginx) et les comparer à Apache2.",
     preuves: [],
   },
 ];
@@ -229,9 +247,9 @@ export default function SAE() {
                     <p className="text-xs text-zinc-500 uppercase tracking-wider mb-3">Difficultés & solutions</p>
                     <div className="space-y-3">
                       {s.difficultes.map((d, i) => (
-                        <div key={i} className="bg-zinc-800/50 rounded-lg p-4 space-y-2 border border-zinc-700/50">
-                          <p className="text-sm text-rose-300 font-medium">⚠ {d.pb}</p>
-                          <p className="text-sm text-emerald-300">✓ {d.sol}</p>
+                        <div key={i} className="bg-zinc-800/50 rounded-lg p-4 space-y-1.5 border border-zinc-700/50">
+                          <p className="text-sm text-zinc-300 font-medium">{d.pb}</p>
+                          <p className="text-sm text-zinc-400">{d.sol}</p>
                         </div>
                       ))}
                     </div>
